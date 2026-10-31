@@ -56,11 +56,15 @@ jobs:
         with:
           context: ./website
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/infraforge-frontend:latest
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/infraforge-frontend:latest
+            ghcr.io/${{ github.repository_owner }}/infraforge-frontend:${{ github.sha }}
 
       - name: Build and Push Backend
         uses: docker/build-push-action@v6
         with:
           context: ./website/backend
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/infraforge-backend:latest
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/infraforge-backend:latest
+            ghcr.io/${{ github.repository_owner }}/infraforge-backend:${{ github.sha }}
