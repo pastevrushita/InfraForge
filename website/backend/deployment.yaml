@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,13 +17,20 @@ spec:
     spec:
       containers:
         - name: backend
-          image: infraforge-backend:v1
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/pastevrushita/infraforge-backend:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
             - name: APP_ENV
               value: "production"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
           readinessProbe:
             httpGet:
               path: /health
