@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infraforge-deployment
+  labels:
+    app: infraforge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: infraforge
+  template:
+    metadata:
+      labels:
+        app: infraforge
+    spec:
+      containers:
+        - name: infraforge-website
+          image: infraforge-website:v3
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

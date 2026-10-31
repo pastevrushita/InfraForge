@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infraforge-backend
+  labels:
+    app: infraforge-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: infraforge-backend
+  template:
+    metadata:
+      labels:
+        app: infraforge-backend
+    spec:
+      containers:
+        - name: backend
+          image: infraforge-backend:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: "production"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 20
