@@ -28,6 +28,10 @@ jobs:
 
       - name: Install Test Dependencies
         run: pip install -r website/backend/requirements-dev.txt
+      - name: Run Python Code Quality Check
+        run: |
+          pip install ruff
+          ruff check website/backend/
 
       - name: Run API Tests
         working-directory: website/backend
