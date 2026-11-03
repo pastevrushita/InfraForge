@@ -1,6 +1,4 @@
-# InfraForge | AWS Cloud & DevOps Automation
-
-**A hands-on Cloud and DevOps engineering project focused on AWS infrastructure, Infrastructure as Code, containerization, Kubernetes orchestration, and CI/CD automation.**
+# InfraForge
 
 InfraForge demonstrates practical implementation of cloud infrastructure using AWS and Terraform, application containerization using Docker, local Kubernetes orchestration, and automated testing and image publishing through GitHub Actions.
 
