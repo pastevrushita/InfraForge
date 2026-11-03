@@ -24,3 +24,16 @@ InfraForge demonstrates practical implementation of cloud infrastructure using A
 - Built and published versioned Docker images to GitHub Container Registry.
 - Tested frontend-to-backend communication and application health endpoints.
 
+## Project Screenshots
+
+### InfraForge Website
+![InfraForge Website](screenshots/website.png)
+
+### Kubernetes Pods
+![Kubernetes Pods](screenshots/kub-pods.png)
+
+### Kubernetes Deployments and Services
+![Kubernetes Deployments and Services](screenshots/kub-deploy.png)
+
+### GitHub Actions CI/CD Pipeline
+![GitHub Actions CI/CD Pipeline](screenshots/github-actions.png)
